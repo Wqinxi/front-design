@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+ 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+routes: [
     {
       path: '/',
       redirect: '/auth/login',
       component: () => import('@/views/auth/Index.vue'),
-      children: []
+      children:[]
     },
     {
       path: '/auth',
@@ -20,7 +20,7 @@ const router = createRouter({
         },
         {
           path: 'register',
-          component: () => import('@/views/auth/LoginPage.vue')
+          component: () => import('@/views/auth/RegistPage.vue')
         },
         {
           path: 'retrieve-password',
@@ -30,7 +30,8 @@ const router = createRouter({
     },
     {
       path: '/work-space',
-      component: () => import('@/views/work-space/Index.vue')
+      component: () => import('@/views/work-space/Index.vue'),
+
     },
   ]
 })

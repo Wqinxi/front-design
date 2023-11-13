@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLoginStore } from "@/stores/auth";
 const loginStore = useLoginStore()
-
+ 
 </script>
 
 <template>

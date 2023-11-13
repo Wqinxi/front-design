@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <component :is="Component"/>
     </keep-alive>
 </template>
-
+ 
 <style scoped>
 
 </style>
