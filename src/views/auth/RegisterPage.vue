@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRegistStore } from "@/stores/auth"
-const registStore = useRegistStore()
+import { useRegisterStore } from "@/stores/auth"
+const registerStore = useRegisterStore()
 
 </script>
 
@@ -14,30 +14,30 @@ const registStore = useRegistStore()
 
       <el-form
           size="small"
-          :model="registStore.form"
+          :model="registerStore.form"
           label-position="top">
         <el-form-item label="工号EMID" class="custom-form-item">
           <el-input
-              v-model="registStore.form.EMID"
+              v-model="registerStore.form.EMID"
               placeholder="Please input EMID"
               class="mode"/>
         </el-form-item>
 
         <el-form-item label="手机号码TEl" class="custom-form-item">
           <el-input
-              v-model="registStore.form.TEL"
+              v-model="registerStore.form.TEL"
               placeholder="Please input TEL"/>
         </el-form-item>
 
         <el-form-item label="用户名Username" class="custom-form-item">
           <el-input
-              v-model="registStore.form.username"
+              v-model="registerStore.form.username"
               placeholder="Please input username"/>
         </el-form-item>
 
         <el-form-item label="密码Password" class="custom-form-item">
           <el-input
-              v-model="registStore.form.password"
+              v-model="registerStore.form.password"
               type="password"
               placeholder="Please input password"
               show-password />
@@ -50,7 +50,7 @@ const registStore = useRegistStore()
           <el-button>返回</el-button>
           <el-button>注册</el-button>
         </div>
-        <div class="register-link" @click="$router.push('/auth/login')">
+        <div class="register-link" @click="$router.replace('/auth/login')">
           已经有账号? 登录
         </div>
       </div>
@@ -58,7 +58,7 @@ const registStore = useRegistStore()
   </el-main>
 
 </template>
-<style lang="less">
+<style lang="less" scoped>
 @import "@/assets/css/AuthPageRight.less";
 .formBottom{
   margin-top: 5%;
@@ -93,8 +93,5 @@ const registStore = useRegistStore()
     }
   }
 }
-
-
-
 
 </style>

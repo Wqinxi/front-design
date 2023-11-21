@@ -32,7 +32,7 @@ const loginStore = useLoginStore()
       </el-form>
       <div class="formBottom">
         <el-button>登录</el-button>
-        <div class="register-link" @click="$router.push('/auth/register')">
+        <div class="register-link" @click="$router.replace('/auth/register')">
           还没有账号? 注册
         </div>
       </div>
@@ -40,7 +40,7 @@ const loginStore = useLoginStore()
   </el-main>
 
 </template>
-<style lang="less">
+<style lang="less" scoped>
 @import "@/assets/css/AuthPageRight.less";
 .formBottom{
   margin-top: 15%;

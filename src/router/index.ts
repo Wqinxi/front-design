@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
- 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 routes: [
@@ -20,11 +20,11 @@ routes: [
         },
         {
           path: 'register',
-          component: () => import('@/views/auth/RegistPage.vue')
+          component: () => import('@/views/auth/RegisterPage.vue')
         },
         {
           path: 'retrieve-password',
-          component: () => import('@/views/auth/LoginPage.vue')
+          component: () => import('@/views/auth/RetrievePassword.vue')
         }
       ]
     },
