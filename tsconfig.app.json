@@ -4,8 +4,9 @@
     "env.d.ts",
     "src/**/*",
     "src/stores/*.ts",
+    "src/router/modules/*.ts",
     "src/**/*.vue.ts"
-  ], 
+  ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

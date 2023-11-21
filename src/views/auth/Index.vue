@@ -8,9 +8,12 @@ import { RouterView } from "vue-router";
 
 <template>
   <el-container direction="horizontal" class="login-container">
-    <RouterView></RouterView>
+    <RouterView v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component"/>
+      </keep-alive>
+    </RouterView>
   </el-container>
-
 </template>
 
 <style>

@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import RefuelAreaRouter from "@/router/modules/refuel-area";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +33,9 @@ routes: [
     {
       path: '/work-space',
       component: () => import('@/views/work-space/Index.vue'),
-
+      children:[
+        RefuelAreaRouter,
+      ]
     },
   ]
 })
