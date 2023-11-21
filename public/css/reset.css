@@ -5,7 +5,7 @@ body{
 }
 :root{
     --bkg-clr: rgb(157,186,220);
-    --light-bgk-clr: rgb(216,228,239);
+    --light-bkg-clr: rgb(216,228,239);
 }
 @media screen and (max-width: 1250px){
     html{

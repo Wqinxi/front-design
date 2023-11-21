@@ -4,6 +4,13 @@
 -->
 <script setup>
 import {RouterView} from "vue-router";
+import generateRoutes from "@/assets/js/generateRoutes";
+import {useRoute} from "vue-router";
+import {ref} from "vue";
+
+const route = useRoute()
+console.log(route.meta)
+const routes = ref(generateRoutes(route.meta.type))
 
 </script>
 
@@ -13,7 +20,7 @@ import {RouterView} from "vue-router";
     一级菜单
   </div>
   <div class="work-space-right">
-    <RouterView v-slot="{ Component }">
+    <RouterView v-slot="{ Component }" :routes="routes">
       <keep-alive>
         <component :is="Component"/>
       </keep-alive>
@@ -35,7 +42,7 @@ import {RouterView} from "vue-router";
   }
   .work-space-right{
     width: 85%;
-    background-color: var(--light-bgk-clr);
+    background-color: var(--light-bkg-clr);
   }
 }
 
