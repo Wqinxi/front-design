@@ -1,11 +1,11 @@
-body{
-    background-color: rgb(157,186,220);
-    margin: 0;
-    border: 0;
-}
 :root{
     --bkg-clr: rgb(157,186,220);
     --light-bkg-clr: rgb(216,228,239);
+    --active-clr: rgb(255,237,142);
+}
+body{
+    margin: 0;
+    border: 0;
 }
 @media screen and (max-width: 1250px){
     html{

@@ -3,14 +3,12 @@
 *@date 2023/11/21 22:56
 -->
 <script setup>
-import {RouterView, useRoute, useRouter} from "vue-router";
-import {toRefs} from "vue";
+import {RouterView, useRoute} from "vue-router";
+import generateRoutes from "@/assets/js/generateRoutes";
 
-const props = defineProps({
-  routes:Array
-})
-const {routes} = toRefs(props)
-console.log(routes)
+const route = useRoute()
+const routes = generateRoutes(route.meta.type)
+
 </script>
 
 <template>
@@ -35,8 +33,7 @@ console.log(routes)
 <style lang="less" scoped>
 .second-router-menu{
   width: 100%;
-  height: 20%;
-  margin-top: 3%;
+  height: 15%;
   display: flex;
   flex-flow: row;
   .route-change{
@@ -44,27 +41,31 @@ console.log(routes)
     display: flex;
     flex-flow: row;
     justify-content: left;
+    align-items: center;
     .el-button {
       font-size: 1.2rem;
       color: #000;
-      width:40%;
+      width:30%;
       height: 15%;
-      padding: 5%;
+      padding: 4%;
       background-color: #fff;
       --el-button-hover-bg-color: var(--bkg-clr);
-      --el-button-hover-text-color: rgb(157,186,220);
-      --el-button-hover-border-color: rgb(157,186,220);
-      border-radius: 25px;
+      --el-button-hover-text-color: #000;
+      --el-button-hover-border-color: #000;
+      --el-button-active-border-color: #000;
+
+      border-radius: 40px;
     }
   }
   .admin-info{
+    position: absolute;
+    right: 0;
     flex: 0 0 40%;
 
   }
 }
 .operating-space{
   width: 100%;
-  height: 80%;
-  background-color: var(--bkg-clr);
+  height: 85%;
 }
 </style>

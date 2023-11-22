@@ -8,7 +8,7 @@ const RefuelAreaRouter:RouteRecordRaw = {
     children:[
         {
             path: 'img',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/refuel-area/ImgHandle.vue'),
             meta: { title: '图像处理' },
         },
         {
