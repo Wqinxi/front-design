@@ -35,7 +35,7 @@ const RPstore = useRetrievePasswordStore()
       </el-form>
       <div class="formBottom">
         <div class="buttons">
-          <el-button>返回</el-button>
+          <el-button @click="$router.push('/auth/login')">返回</el-button>
           <el-button>确认</el-button>
         </div>
         <div class="register-link" @click="$router.push('/auth/login')">
@@ -63,9 +63,6 @@ const RPstore = useRetrievePasswordStore()
       height: 15%;
       padding: 5%;
       background-color: rgb(232,223,179);
-      --el-button-hover-bg-color: #fff;
-      --el-button-hover-text-color: rgb(232,223,179);
-      --el-button-hover-border-color: rgb(232,223,179);
       border-radius: 10px;
     }
     .el-button:nth-child(2){
@@ -74,10 +71,17 @@ const RPstore = useRetrievePasswordStore()
       height: 15%;
       padding: 5%;
       background-color: rgb(157,186,220);
-      --el-button-hover-bg-color: #fff;
-      --el-button-hover-text-color: rgb(157,186,220);
-      --el-button-hover-border-color: rgb(157,186,220);
       border-radius: 10px;
+    }
+    .el-button:nth-child(1):hover{
+      background-color: #fff;
+      color: rgb(232,223,179);
+      border-color: rgb(232,223,179);
+    }
+    .el-button:nth-child(2):hover{
+      background-color: #fff;
+      color: rgb(157,186,220);
+      border-color: rgb(157,186,220);
     }
   }
 }

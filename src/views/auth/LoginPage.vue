@@ -53,10 +53,12 @@ const loginStore = useLoginStore()
   height: 15%;
   padding: 5%;
   background-color: rgb(157,186,220);
-  --el-button-hover-bg-color: #fff;
-  --el-button-hover-text-color: rgb(157,186,220);
-  --el-button-hover-border-color: rgb(157,186,220);
   border-radius: 10px;
+}
+.el-button:hover{
+  background-color: #fff;
+  color: rgb(157,186,220);
+  border-color: rgb(157,186,220);
 }
 
 </style>

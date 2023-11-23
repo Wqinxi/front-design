@@ -15,7 +15,7 @@ const items = ref([
   {id:2, icon:'Management', type: '后台管理', url: '/manage'},
   {id:3, icon:'WarningFilled', type: '安全措施', url:'/secure'}
 ])
-
+console.log(items.value)
 </script>
 
 <template>

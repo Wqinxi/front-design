@@ -5,10 +5,14 @@
 <script setup>
 import {RouterView, useRoute} from "vue-router";
 import generateRoutes from "@/assets/js/generateRoutes";
-
+import {computed} from "vue";
 const route = useRoute()
-const routes = generateRoutes(route.meta.type)
+const routes = computed(()=>{
+  return generateRoutes(route.meta.type)
+})
 
+console.log(routes)
+console.log(route.meta.title)
 </script>
 
 <template>
@@ -53,12 +57,17 @@ const routes = generateRoutes(route.meta.type)
       padding: 4%;
       background-color: transparent;
       --el-button-hover-border-color: #000;
+      --el-button-active-border-color: #000;
       border-radius: 40px;
+      transition: 0.5s;
+    }
+    .el-button:hover{
+      font-size: 1.4rem;
+
     }
     .el-button.active{
       background-color: #fff;
       border-color: #000;
-
     }
   }
   .admin-info{
