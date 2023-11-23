@@ -1,6 +1,4 @@
 :root{
-    --bkg-clr: rgb(157,186,220);
-    --light-bkg-clr: rgb(216,228,239);
     --active-clr: rgb(255,237,142);
 }
 body{

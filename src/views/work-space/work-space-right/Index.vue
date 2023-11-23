@@ -26,7 +26,14 @@ console.log(route.meta.title)
     </el-button>
   </div>
   <div class="admin-info">
-    用户信息
+    <div class="photo-name">
+        <div class="photo">
+          <img src="@/assets/img/白子.jpg"/>
+        </div>
+        <div class="name">
+          砂狼白子
+        </div>
+    </div>
   </div>
 </div>
 <div class="operating-space">
@@ -40,11 +47,11 @@ console.log(route.meta.title)
 <style lang="less" scoped>
 .second-router-menu{
   width: 100%;
-  height: 15%;
+  height: 12%;
   display: flex;
   flex-flow: row;
   .route-change{
-    flex: 0 0 60%;
+    flex: 0 0 50%;
     display: flex;
     flex-flow: row;
     justify-content: left;
@@ -52,8 +59,7 @@ console.log(route.meta.title)
     .el-button {
       font-size: 1.2rem;
       color: #000;
-      width:30%;
-      height: 15%;
+      width:25%;
       padding: 4%;
       background-color: transparent;
       --el-button-hover-border-color: #000;
@@ -71,14 +77,35 @@ console.log(route.meta.title)
     }
   }
   .admin-info{
-    position: absolute;
-    right: 0;
-    flex: 0 0 40%;
-
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: right;
+    .photo-name{
+      flex: 0 0 40%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .photo{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 0.2rem solid #fff;
+        background-color: var(--bkg-clr);
+        img{
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .name{
+        margin-left: 0.5rem;
+      }
+    }
   }
 }
 .operating-space{
   width: 100%;
-  height: 85%;
+  height: 88%;
 }
 </style>

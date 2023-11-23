@@ -3,7 +3,7 @@
 *@date 2023/11/10 11:08
 -->
 <script setup>
-import {RouterView} from "vue-router";
+import { RouterView} from "vue-router";
 import {useRoute} from "vue-router";
 import {ref} from "vue";
 
@@ -15,17 +15,17 @@ const items = ref([
   {id:2, icon:'Management', type: '后台管理', url: '/manage'},
   {id:3, icon:'WarningFilled', type: '安全措施', url:'/secure'}
 ])
-console.log(items.value)
+
 </script>
 
 <template>
-<div class="work-space">
+<div class="work-space" >
   <div class="router-menu">
     <ul>
       <li
           v-for="item in items" :key="item.id"
           :class="['list', item.type===route.meta.type?'active':'']"
-          @click="$router.push(item.url)"
+          @click="loadBkgClr;$router.push(item.url)"
       >
         <RouterLink :to="item.url">
           <el-icon size="2rem">
@@ -52,5 +52,6 @@ console.log(items.value)
 </template>
 
 <style lang="less" scoped>
-@import "@/assets/css/LeftMenu";
+@import "@/assets/css/WorkSpace";
+
 </style>
