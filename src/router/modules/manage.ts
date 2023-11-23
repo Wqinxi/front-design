@@ -8,7 +8,7 @@ const ManageRouter:RouteRecordRaw = {
     children:[
         {
             path: 'user',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/manage/UserManage.vue'),
             meta: { title: '用户管理' },
         },
         {

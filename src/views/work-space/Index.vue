@@ -10,10 +10,10 @@ import {ref} from "vue";
 const route = useRoute()
 
 const items = ref([
-  {id:0, icon:'', type: '加油区', url:'/refuel-area'},
-  {id:1, icon:'', type: '卸油区', url: '/unload-area'},
-  {id:2, icon:'', type: '后台管理', url: '/manage'},
-  {id:3, icon:'', type: '安全措施', url:'/secure'}
+  {id:0, icon:'Plus', type: '加油区', url:'/refuel-area'},
+  {id:1, icon:'Minus', type: '卸油区', url: '/unload-area'},
+  {id:2, icon:'Management', type: '后台管理', url: '/manage'},
+  {id:3, icon:'WarningFilled', type: '安全措施', url:'/secure'}
 ])
 
 </script>
@@ -23,20 +23,22 @@ const items = ref([
   <div class="router-menu">
     <ul>
       <li
-        v-for="item in items" :key="item.id"
-        :class="['list', item.type===route.meta.type?'active':'']"
-        @click="$router.push(item.url)"
+          v-for="item in items" :key="item.id"
+          :class="['list', item.type===route.meta.type?'active':'']"
+          @click="$router.push(item.url)"
       >
         <RouterLink :to="item.url">
-          <span class="icon">
-          <i :class="item.icon"></i>
-        </span>
+          <el-icon size="2rem">
+            <component :is="item.icon"/>
+          </el-icon>
           <span class="text">
           {{ item.type }}
         </span>
         </RouterLink>
       </li>
-      <div class="indicator"></div>
+      <div class="indicator">
+        <div class="blocker"></div>
+      </div>
     </ul>
   </div>
   <div class="work-space-right">
@@ -50,65 +52,5 @@ const items = ref([
 </template>
 
 <style lang="less" scoped>
-.work-space{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-flow: row;
-  background-color: var(--light-bkg-clr);
-  .router-menu{
-    position: relative;
-    width: 8%;
-    height: 100%;
-    background: var(--bkg-clr);
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    ul{
-      li{
-        position: relative;
-        list-style: none;
-        width: 6rem;
-        height: 6rem;
-        z-index: 1;
-        .router-link{
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          width: 100%;
-          text-align: center;
-          font-weight: 500;
-          .icon{
-            position: relative;
-            display: block;
-            line-height: 75px;
-            font-size: 1.5em;
-            text-align: center;
-            transition: 0.5s;
-            color: #fff
-          }
-        }
-      }// li
-      .router-link-active a .icon {
-        color: var(--active-clr);
-        transform: translateY(-32px);
-      }// active li
-    } // ul
-  }// router-menu
-  .work-space-right{
-    position: absolute;
-    width: 88%;
-    height: 100%;
-    right: 0;
-    background-color: var(--light-bkg-clr);
-  }
-}
-
-
+@import "@/assets/css/LeftMenu";
 </style>

@@ -7,7 +7,7 @@ const SecureRouter = {
     children:[
         {
             path: 'regulations',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/manage/UserManage.vue'),
             meta: { title: '安全条例' },
         },
         {
