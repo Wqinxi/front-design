@@ -7,12 +7,7 @@ body{
     margin: 0;
     border: 0;
 }
-@media screen and (max-width: 1000px){
-    html{
-        font-size: 8px;
-    }
-}
-@media screen and (min-width: 1001px) and (max-width: 1250px){
+@media screen  and (max-width: 1250px){
     html{
         font-size: 12px;
     }

@@ -14,8 +14,11 @@ const routes = generateRoutes(route.meta.type)
 <template>
 <div class="second-router-menu">
   <div class="route-change">
-    <el-button v-for="route in routes">
-      {{ route.title }}
+    <el-button
+        v-for="item in routes"
+        :class="['el-button', item.title===route.meta.title?'active':'']"
+        @click="$router.push(item.url)">
+      {{ item.title }}
     </el-button>
   </div>
   <div class="admin-info">
@@ -48,13 +51,14 @@ const routes = generateRoutes(route.meta.type)
       width:30%;
       height: 15%;
       padding: 4%;
-      background-color: #fff;
-      --el-button-hover-bg-color: var(--bkg-clr);
-      --el-button-hover-text-color: #000;
+      background-color: transparent;
       --el-button-hover-border-color: #000;
-      --el-button-active-border-color: #000;
-
       border-radius: 40px;
+    }
+    .el-button.active{
+      background-color: #fff;
+      border-color: #000;
+
     }
   }
   .admin-info{
