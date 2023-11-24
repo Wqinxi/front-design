@@ -11,9 +11,9 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "target": "esnext",
-    "module": "esnext",
+    "module": "es2022",
     "strict": false,
     "jsx": "preserve",
-    "moduleResolution": "node"
+    "moduleResolution": "Node"
   }
 }
