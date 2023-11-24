@@ -13,7 +13,7 @@ const RefuelAreaRouter:RouteRecordRaw = {
         },
         {
             path: 'video',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/refuel-area/VideoMonitor.vue'),
             meta: { title: '视频监控' }
         }
 

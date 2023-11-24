@@ -1,94 +1,136 @@
-<template>
-  <div>
-    <el-button type="primary" class="button upload-button">
-      上传检测图片
-      <input
-        type="file"
-        accept="image/*"
-        class="file-input"
-      />
-    </el-button>
-    <el-button type="primary" danger class="button">
-      清除已检测缓存
-    </el-button>
-    <p class="img-tip">
-      说明：图片处理功能，需要上传一张图片，然后点击检测按钮，等待结果检出；若重复检测相同图片，则直接显示上次检测结果。
-    </p>
-
-    <div style="display: flex">
-      <div class="img-view" :style="{ backgroundImage: `url(${sourceImg})` }">
-        <div :class="{ scan: isScanning }"></div>
-      </div>
-      <div
-        class="img-view"
-        :style="{ backgroundImage: `url(${identifiedImg})` }"
-        style="margin-left: 30px"
-      ></div>
-    </div>
-    <div class="scan"></div>
-  </div>
-</template>
-
-<script setup lang="ts">
-
-import {useRoute} from "vue-router";
-import {ref} from "vue";
-
-const route = useRoute()
-const sourceImg = ref('')
-const identifiedImg = ref('')
-const isScanning = ref(false)
+<script setup>
 
 </script>
 
-<style lang="less" scoped>
-.img {
-  &-buttons {
-    margin-top: 4px;
-  }
-  &-tip {
-    font-size: 14px;
-    color: #ddd;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  &-view {
-    flex: 1 0 400px;
-    min-height: 64vh;
-    border-radius: 8px;
-    background-color: rgba(41, 44, 50, 1);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-}
-.upload-button {
-  margin-right: 24px;
-}
+<template>
+ <el-main>
 
-.file-input {
+  <div class="blue-box" style="height: 78vh;">
+
+    <div class="white-block left-block">
+     <el-header class="common-style hold">
+      <div class="text">待检测图片</div>
+    </el-header>
+    <el-main>
+    <img src="@/assets/img/piclook.png" class="image"/>
+    </el-main>
+      <el-button class="common-button choose">选择检测图片</el-button><el-button class="common-button sure">确认上传</el-button>
+    </div>
+
+    <span class="white-text">说明：图片处理功能，需要上传一张照片，然后点击检测按钮，等待结果检出；若重复检测相同照片，则直接显示上次检测结果。</span>
+
+    <div class="white-block right-block">
+      <el-header class="common-style result">
+      <div class="text">检测结果</div>
+      </el-header>
+      <el-main>
+      <img src="@/assets/img/picres.png" class="image"/>
+      </el-main>
+      <el-button class="common-button clear">清除已检测缓存</el-button>
+    </div>
+
+  </div>
+
+ </el-main>
+</template>
+
+<style>
+.blue-box {
+  background-color: rgb(157,186,220);
+  border-radius: 30px;
+  display: flex;
+  margin-right: 7%;
+  margin-bottom: auto;
+}
+.white-text {
+  color: white;
+  font-size: 14px;
+  margin-top: 1.5%;
+  padding-left: 7%;
+  padding-top: 1.2%;
+}
+.white-block {
+  background-color: white;
+  border-radius: 30px;
+  width: 36%;
+  height: 60%;
   position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.scan {
-  position: relative;
-  background: linear-gradient(180deg, rgba(0, 255, 51, 0) 43%, #3b87f7 211%);
-  height: 16%;
-  animation: radar-beam 3s infinite ease-in-out;
-}
-
-@keyframes radar-beam {
-  0% {
-    top: -6%;
-  }
-  100% {
-    top: 84%;
+  bottom: 13%;
+  .el-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:6%;
+    margin-bottom:-5%;
+    max-width: 100%;
+    max-height: 100%;
+    .image {
+      width: 90%;
+      height: 90%;
+    }
   }
 }
+.left-block {
+  margin-left: 7%;
+}
+.right-block {
+  right: 16%;
+}
+
+.common-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 34%;
+  margin-top: 6%;
+  margin-bottom:-2%;
+  font-size: 1rem;
+  color: #000;
+  width: 30%;
+  height: 10%;
+  padding: 3%;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.hold {
+  background-color: rgb(205 227 255);
+}
+.result {
+  background-color: rgb(255, 250, 183);
+}
+.text {
+  text-align: center;
+}
+
+.common-button{
+  margin-top:4%;
+  font-size: 1rem;
+  color: #000;
+  height: 7%;
+  padding: 3%;
+  border-color: #000;
+  --el-button-hover-text-color: #000;
+  --el-button-hover-border-color: #000;
+  border-radius: 15px;
+}
+.choose{
+  margin-left: 16%;
+  width: 38%;
+  background-color: rgb(205 227 255);
+  --el-button-hover-bg-color: #abd0fd;
+}
+.sure{
+  width: 35%;
+  background-color: rgb(255, 206, 150);
+  --el-button-hover-bg-color: #ffc16f;
+}
+.clear{
+  margin-left: 34%;
+  width: 38%;
+  background-color: rgb(255, 251, 222);
+  --el-button-hover-bg-color: #fdf7ab;
+}
+
+
+
 </style>
