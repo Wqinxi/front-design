@@ -13,7 +13,7 @@ const ManageRouter:RouteRecordRaw = {
         },
         {
             path: 'task',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/manage/TaskManage.vue'),
             meta: { title: '任务管理' }
         }
 

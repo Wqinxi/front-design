@@ -82,11 +82,11 @@ const pageList = computed(()=>{
   }
   return list
 })
-console.log(pageList.value)
+
 </script>
 
 <template>
-  <div class="user-manage">
+  <div class="manage">
     <div class="user-list">
       <div class="user-list-header" >
         <div v-for="col in columns" :style="{width: col.width}">{{ col.title}}</div>

@@ -65,8 +65,15 @@
     max-width: 100%;
     max-height: 100%;
     .image {
+      cursor: pointer;
+      margin-top: 5%;
       width: 90%;
       height: 90%;
+      transition: 0.5s;
+    }
+    .image:hover{
+      width: 95%;
+      height: 95%;
     }
   }
 }
@@ -111,7 +118,11 @@
   border-color: #000;
   --el-button-hover-text-color: #000;
   --el-button-hover-border-color: #000;
-  border-radius: 15px;
+  border-radius: 0.8rem;
+  transition: 0.5s;
+}
+.common-button:hover{
+  font-size: 1.1rem;
 }
 .choose{
   margin-left: 16%;
