@@ -17,7 +17,7 @@ const SecureRouter = {
         },
         {
             path: 'contact-phone',
-            component: () => import('@/views/auth/Index.vue'),
+            component: () => import('@/views/work-space/work-space-right/secure/ContactPhone.vue'),
             meta: { title: '联系电话' }
         }
 
