@@ -29,10 +29,12 @@
     flex: 0 0 10%;
     width: 90%;
     border-bottom: 1px solid #000;
+    border-radius: 0.5rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
     &-item{
       height: 100%;
       display: flex;
@@ -75,6 +77,10 @@
       .action:first-child:before {
         display: none;
       }
-    }
+    }// &-actions
+  }// &-column
+  &-column:hover{
+    border: 1px solid #000;
+    background-color: var(--light-bkg-clr);
   }
 }//user-list

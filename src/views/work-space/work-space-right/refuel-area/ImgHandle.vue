@@ -69,11 +69,6 @@
       margin-top: 5%;
       width: 90%;
       height: 90%;
-      transition: 0.5s;
-    }
-    .image:hover{
-      width: 95%;
-      height: 95%;
     }
   }
 }

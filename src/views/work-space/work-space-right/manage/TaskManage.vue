@@ -30,35 +30,94 @@ const pageList = computed(()=>{
   }
   return list
 })
+// tableData
+const tableData = []
+for (let i = 0; i < 2; i++) {
+  tableData.push({
+    title: '一个任务名称',
+    desc: `一段假想的简介，这是一段比较长的简介`,
+    owner: 'Andrew',
+    startTime: '2016-06-16 14:30',
+    success: '正在上传',
+    progress: 50
+  })
+}
+for (let i = 0; i < 2; i++) {
+  tableData.push({
+    title: '一个任务名称',
+    desc: `一段假想的简介，这是一段比较长的简介`,
+    owner: 'Andrew',
+    startTime: '2016-06-16 14:30',
+    success: '上传失败',
+    progress: 100
+  })
+}
+for (let i = 0; i < 3; i++) {
+  tableData.push({
+    title: '一个任务名称',
+    desc: `一段假想的简介，这是一段比较长的简介`,
+    owner: 'Andrew',
+    startTime: '2016-06-16 14:30',
+    success: '已完成',
+    progress: 100
+  })
+}
+const taskType = ref('all')  // all || completed || uncompleted
+const computedData = computed(()=>{
+  if(taskType.value === 'all'){
+    return tableData
+  }else if(taskType.value === 'uncompleted'){
+    return tableData.filter(item=>item.success === '正在上传' || item.success === '上传失败')
+  }else if(taskType.value === 'completed'){
+    return tableData.filter(item=>item.success === '已完成')
+  }
+})
 </script>
 
 <template>
   <div class="manage">
     <div class="task-list">
-      <div class="task-list-item">
-        <span class="task-list-block">Task</span>
-        <div style="margin-left: 23px; margin-right: 40px; width: 340px">
-          <div class="task-list-title">一个任务名称</div>
-          <div class="task-list-desc">
-            一段假想的简介，这是一段比较长的简介。
+      <div class="task-list-header">
+        <div class="task-list-header-bar">
+          <button :class="{active: taskType==='all'}" @click="taskType='all'">全部</button>
+          <button :class="{active: taskType==='completed'}" @click="taskType='completed'">已完成</button>
+          <button :class="{active: taskType==='uncompleted'}" @click="taskType='uncompleted'">未完成</button>
+        </div>
+        <div class="task-list-header-bar">
+          <input type="text" placeholder="请输入"/>
+          <div class="searchIcon">
+            <el-icon ><Search></Search></el-icon>
           </div>
         </div>
-        <div style="width: 42px">
-          <div class="task-list-owner">Owner</div>
-          <div class="task-list-owner">曲丽丽</div>
+      </div>
+      <div class="task-list-item" v-for="data in computedData">
+        <span class="task-list-item-block">Task</span>
+        <div class="task-list-item-content">
+          <div class="title">{{data.title}}</div>
+          <div class="desc">
+            {{data.desc}}
+          </div>
         </div>
-        <div style="margin-left: 39px; margin-right: 40px; width: 117px">
-          <div class="task-list-startTime">开始时间</div>
-          <div class="task-list-startTime">2016-06-16 14:30</div>
+        <div class="task-list-item-owner" >
+          <div>Owner</div>
+          <div>{{data.owner}}</div>
         </div>
-        <a-progress
-            style="width: 160px; margin-right: 50px"
-            :percent="50"
-        />
-
-        <span style="padding-right: 2px">
-              <a-tag color="success">正在上传</a-tag>
-            </span>
+        <div class="task-list-item-startTime">
+          <div>开始时间</div>
+          <div>{{data.startTime}}</div>
+        </div>
+        <div class="task-list-item-progress">
+          <div class="container">
+            <div class="progress" :style="{width: data.progress+'%'}"></div>
+          </div>
+          <div class="percent">{{data.progress}}%</div>
+        </div>
+        <div :class="['task-list-item-success',
+          data.success==='已完成'?'success':'',
+          data.success==='正在上传'?'uploading':'',
+          data.success==='上传失败'?'fail':'',]">
+              {{  data.success }}
+        </div>
       </div>
 
 
