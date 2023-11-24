@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 34%;
+  margin-left: 37%;
   margin-top: 6%;
   margin-bottom:-2%;
   font-size: 1rem;

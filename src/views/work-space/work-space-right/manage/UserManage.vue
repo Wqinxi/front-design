@@ -1,6 +1,7 @@
 <script setup>
 // tableData
 import {formatTime} from "@/utils/format";
+import {computed, ref} from "vue";
 
 const columns = [
   {
@@ -53,6 +54,35 @@ for (let i = 0; i < 7; i++) {
     action: 'name',
   })
 }
+
+// pagination
+const totalPage = ref(20)
+const currentPage = ref(5)
+const pageSize = ref(7)
+const skipPageNumber = ref(1)
+const pageList = computed(()=>{
+  const halfPageSize = Math.floor(pageSize.value/2)
+  const list = []
+  if(totalPage.value <= pageSize.value){
+    for(let i = 1;i<=totalPage.value;++i){
+      list.push(i)
+    }
+  }else if (currentPage.value >= 1+halfPageSize && currentPage.value <= totalPage.value - halfPageSize){
+    for(let i = -halfPageSize;i<=halfPageSize;++i){
+      list.push(currentPage.value + i)
+    }
+  }else if (currentPage.value < 1+halfPageSize){
+    for(let i = 1;i<= pageSize.value;++i){
+      list.push(i)
+    }
+  }else if (currentPage.value > totalPage.value - halfPageSize){
+    for(let i = 1 + totalPage.value-pageSize.value;i<= totalPage.value;++i){
+      list.push(i)
+    }
+  }
+  return list
+})
+console.log(pageList.value)
 </script>
 
 <template>
@@ -67,7 +97,7 @@ for (let i = 0; i < 7; i++) {
             v-for="col in columns" :style="{width: col.width}">
           <div class="user-list-column-item-img"
               v-if="col.dataIndex==='avatar'">
-            <img :src="data[col.dataIndex]" alt="呜呜，没有图片">
+            <img src="@/assets/img/白子.jpg" alt="呜呜，没有图片">
           </div>
           <div class="actions" v-else-if="col.key==='action'">
             <div class="action">编辑</div>
@@ -81,11 +111,30 @@ for (let i = 0; i < 7; i++) {
       </div>
     </div>
     <div class="pagination">
-      <el-pagination background layout="prev, pager, next" :total="1000" />
+      <div class="pagination-bar">
+        <el-icon class="arrow" size="2rem"
+                 @click="--currentPage"
+        ><Back></Back></el-icon>
+        <div :class="['pagination-bar-button', currentPage===page?'active':'']"
+            v-for="page in pageList"
+             @click="currentPage=page"
+        >
+          {{page}}
+        </div>
+        <el-icon class="arrow" size="2rem"
+          @click="++currentPage"
+        ><Right></Right></el-icon>
+      </div>
+      <div class="page-skipper">
+        跳至 <input
+          @keyup.enter="currentPage=skipPageNumber"
+          v-model.number="skipPageNumber"/> 页
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="less" scoped>
+@import "@/assets/css/Manage";
 @import "@/assets/css/UserManage";
 </style>

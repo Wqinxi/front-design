@@ -1,88 +1,80 @@
-.user-manage{
-  width: 100%;
-  height: 100%;
+.user-list{
+  height: 90%;
+  width: 99%;
+  border: 1px solid #000;
+  border-radius: 3rem;
+  background-color: var(--list-clr);
+
   display: flex;
   flex-flow: column;
   align-items: center;
-  .user-list{
-    height: 90%;
-    width: 99%;
+  &-header{
+    flex: 0 0 8%;
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 2rem;
     border: 1px solid #000;
-    border-radius: 3rem;
-    background-color: var(--list-clr);
+    background-color: rgb(255,186,122);
+    table-layout: fixed;
+    color: #fff;
 
     display: flex;
-    flex-flow: column;
+    justify-content: center;
     align-items: center;
-    &-header{
-      flex: 0 0 8%;
-      width: 90%;
-      margin-top: 1rem;
-      border-radius: 2rem;
-      border: 1px solid #000;
-      background-color: rgb(255,186,122);
-      table-layout: fixed;
-      color: #fff;
+    div{
+      text-align: center;
+    }
+  }
+  &-column{
+    flex: 0 0 10%;
+    width: 90%;
+    border-bottom: 1px solid #000;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-item{
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      div{
-        text-align: center;
+      &-img{
+        width: 20%;
+        height: 45%;
+        img{
+          border-radius: 20px;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
-    &-column{
-      flex: 0 0 10%;
-      width: 90%;
-      border-bottom: 1px solid #000;
-
+    .actions{
+      width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      &-item{
+      justify-content: space-around;
+      .action{
+        flex: 25%;
         height: 100%;
+        text-align: center;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        img{
-          height: 100%;
-        }
+
+        color: rgb(61,115,197);
+        cursor: pointer;
       }
-      .actions{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-around;
-        .action{
-          flex: 25%;
-          height: 100%;
-          text-align: center;
-
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          color: rgb(61,115,197);
-        }
-        .action::before{
-          content: "|";
-          font-size: 1.5rem;
-          float: left;
-          margin-right: 33%;
-          color: rgb(206,206,206);
-        }
-        .action:first-child:before {
-          display: none;
-        }
+      .action::before{
+        content: "|";
+        font-size: 1.5rem;
+        float: left;
+        margin-right: 33%;
+        color: rgb(206,206,206);
       }
-    }
-  }//user-list
-  .pagination{
-    margin-top: 1rem;
-
-    li{
-      border-radius: 20px;
+      .action:first-child:before {
+        display: none;
+      }
     }
   }
-}// user manage
-
+}//user-list

@@ -34,6 +34,7 @@ routes: [
     },
     {
       path: '/work-space',
+      redirect: '/refuel-area',
       component: () => import('@/views/work-space/Index.vue'),
       children:[
         RefuelAreaRouter,
