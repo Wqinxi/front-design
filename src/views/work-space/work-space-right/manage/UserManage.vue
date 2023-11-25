@@ -113,21 +113,23 @@ const pageList = computed(()=>{
     <div class="pagination">
       <div class="pagination-bar">
         <el-icon class="arrow" size="2rem"
+                 v-if="currentPage>1"
                  @click="--currentPage"
         ><Back></Back></el-icon>
         <div :class="['pagination-bar-button', currentPage===page?'active':'']"
-            v-for="page in pageList"
+             v-for="page in pageList"
              @click="currentPage=page"
         >
           {{page}}
         </div>
         <el-icon class="arrow" size="2rem"
-          @click="++currentPage"
+                 v-if="currentPage<totalPage"
+                 @click="++currentPage"
         ><Right></Right></el-icon>
       </div>
       <div class="page-skipper">
         跳至 <input
-          @keyup.enter="currentPage=skipPageNumber"
+          @keyup.enter="currentPage=(skipPageNumber>=1&&skipPageNumber<=totalPage)?skipPageNumber:currentPage"
           v-model.number="skipPageNumber"/> 页
       </div>
     </div>

@@ -5,9 +5,10 @@
 import {computed, ref} from "vue";
 
 const totalPage = ref(20)
-const currentPage = ref(5)
+let currentPage = ref(5)
 const pageSize = ref(7)
 const skipPageNumber = ref(1)
+
 const pageList = computed(()=>{
   const halfPageSize = Math.floor(pageSize.value/2)
   const list = []
@@ -125,6 +126,7 @@ const computedData = computed(()=>{
     <div class="pagination">
       <div class="pagination-bar">
         <el-icon class="arrow" size="2rem"
+                 v-if="currentPage>1"
                  @click="--currentPage"
         ><Back></Back></el-icon>
         <div :class="['pagination-bar-button', currentPage===page?'active':'']"
@@ -134,12 +136,13 @@ const computedData = computed(()=>{
           {{page}}
         </div>
         <el-icon class="arrow" size="2rem"
+                 v-if="currentPage<totalPage"
                  @click="++currentPage"
         ><Right></Right></el-icon>
       </div>
       <div class="page-skipper">
         跳至 <input
-          @keyup.enter="currentPage=skipPageNumber"
+          @keyup.enter="currentPage=(skipPageNumber>=1&&skipPageNumber<=totalPage)?skipPageNumber:currentPage"
           v-model.number="skipPageNumber"/> 页
       </div>
     </div>
