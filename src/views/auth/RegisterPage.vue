@@ -101,5 +101,8 @@ const registerStore = useRegisterStore()
 .el-form-item--small{
   margin-bottom: 8px;
 }
-
+.form-container {
+  width: 85%; 
+  margin: 0 auto; 
+}
 </style>
