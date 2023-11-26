@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --active-clr: rgb(255,237,142);
     --bkg-clr: rgb(157,186,220);
@@ -17,3 +18,24 @@ body{
         font-size: 16px;
     }
 }
+=======
+:root{
+    --active-clr: rgb(255,237,142);
+    --bkg-clr: rgb(157,186,220);
+    --light-bkg-clr: rgb(216,228,239);
+}
+body{
+    margin: 0;
+    border: 0;
+}
+@media screen  and (max-width: 1250px){
+    html{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1251px){
+    html{
+        font-size: 16px;
+    }
+}
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5

@@ -6,14 +6,23 @@
  <el-main>
 
   <div class="blue-box" style="height: 78vh;">
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
     <div class="white-block left-block">
      <el-header class="common-style hold">
       <div class="text">待检测图片</div>
     </el-header>
     <el-main>
+<<<<<<< HEAD
     <img src="/src/assets/img/piclook.png" class="image"/>
     </el-main> 
+=======
+    <img src="@/assets/img/piclook.png" class="image"/>
+    </el-main>
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
       <el-button class="common-button choose">选择检测图片</el-button><el-button class="common-button sure">确认上传</el-button>
     </div>
 
@@ -24,6 +33,7 @@
       <div class="text">检测结果</div>
       </el-header>
       <el-main>
+<<<<<<< HEAD
       <img src="/src/assets/img/picres.png" class="image"/>
       </el-main> 
       <el-button class="common-button clear">清除已检测缓存</el-button>
@@ -31,6 +41,15 @@
     
   </div>
   
+=======
+      <img src="@/assets/img/picres.png" class="image"/>
+      </el-main>
+      <el-button class="common-button clear">清除已检测缓存</el-button>
+    </div>
+
+  </div>
+
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
  </el-main>
 </template>
 
@@ -137,4 +156,10 @@
   --el-button-hover-bg-color: #fdf7ab;
 }
 
+<<<<<<< HEAD
 </style>
+=======
+
+
+</style>
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5

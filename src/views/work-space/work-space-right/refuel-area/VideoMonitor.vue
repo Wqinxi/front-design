@@ -1,4 +1,5 @@
 <script setup>
+<<<<<<< HEAD
 import MessageBox from "./message-box.vue";
 import {formatTime} from "@/utils/format";
 import {computed, ref} from "vue";
@@ -16,10 +17,13 @@ const confirm = () => {
 const currentDate = new Date();
 const currentTime = ref(formatTime(currentDate.toISOString()));;
 
+=======
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
 
 </script>
 
 <template>
+<<<<<<< HEAD
 <div>
  <el-main>
   <div class="blue-box" style="height: 78vh;">
@@ -109,3 +113,23 @@ const currentTime = ref(formatTime(currentDate.toISOString()));;
 }
 
 </style>
+=======
+<el-main>
+
+<div class="blue-box" style="height: 78vh;">
+
+</div>
+
+</el-main>
+</template>
+
+<style>
+.blue-box {
+  background-color: rgb(157,186,220);
+  border-radius: 30px;
+  display: flex;
+  margin-right: 7%;
+  margin-bottom: auto;
+}
+</style>
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5

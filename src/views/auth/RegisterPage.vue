@@ -6,7 +6,11 @@ const registerStore = useRegisterStore()
 
 <template>
   <el-aside class="left-container">
+<<<<<<< HEAD
     <img src="../../assets/img/register.png" >
+=======
+    <img src="../../assets/img/白子.jpg" >
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
   </el-aside>
   <el-main class="right-container">
     <div class="form-container">
@@ -58,7 +62,10 @@ const registerStore = useRegisterStore()
   </el-main>
 
 </template>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
 <style lang="less" scoped>
 @import "@/assets/css/AuthPageRight.less";
 .formBottom{
@@ -101,8 +108,12 @@ const registerStore = useRegisterStore()
 .el-form-item--small{
   margin-bottom: 8px;
 }
+<<<<<<< HEAD
 .form-container {
   width: 85%; 
   margin: 0 auto; 
 }
+=======
+
+>>>>>>> 09bd6c15b2d35278c354f85e0b20d1a3253232b5
 </style>
